@@ -1,0 +1,7 @@
+{
+    "require": {
+      "videlalvaro/php-amqplib": "2.5.0",
+      "fennb/phirehose": "dev-master",
+      "elasticsearch/elasticsearch": "dev-master"
+    }
+}
