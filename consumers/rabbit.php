@@ -1,6 +1,6 @@
 <?php
-require '../vendor/autoload.php';
-require '../autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../autoload.php';
 
 use app\queue\RabbitMQQueue;
 

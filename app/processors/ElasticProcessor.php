@@ -9,8 +9,15 @@ class ElasticProcessor extends AbstractProcessor {
 
 	public static function processRabbit(AMQPMessage $message) {
 
-		$hosts = ['localhost:9200'];
+		$hosts = ['hosts' => ['192.168.56.101:9200', 'localhost:9200']];
+		$indexParams['index']  = 'twitter';    //index
+
 		$client = new Client($hosts);
+		try {
+			$client->indices()->create($indexParams);
+		} catch (\Exception $e) {
+			//just to create the index if its not there
+		}
 
 		$body = json_decode($message->body, true);
 
