@@ -10,7 +10,7 @@ class ElasticProcessor extends AbstractProcessor {
 	public static function processRabbit(AMQPMessage $message) {
 
 		$hosts = ['hosts' => ['192.168.56.101:9200', 'localhost:9200']];
-		$indexParams['index']  = 'twitter';    //index
+		$indexParams['index']  = 'twitter'; //index
 
 		$client = new Client($hosts);
 		try {
@@ -21,7 +21,6 @@ class ElasticProcessor extends AbstractProcessor {
 
 		$body = json_decode($message->body, true);
 
-		//var_dump($body);die;
 		$params = [
 			'index' => 'twitter',
 			'type'  => 'tweets',
@@ -32,6 +31,6 @@ class ElasticProcessor extends AbstractProcessor {
 
 		$message->delivery_info['channel']->basic_ack($message->delivery_info['delivery_tag']);
 
-		echo " [x] PROCESSED and sent to elastic \n";
+		echo "\n[x] PROCESSED and sent to elastic \n";
 	}
 }
