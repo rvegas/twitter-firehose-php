@@ -51,6 +51,7 @@ define("TWITTER_CONSUMER_SECRET", "");
 define("OAUTH_TOKEN", "");
 define("OAUTH_SECRET", "");
 
+// Define the latest items or topics to search for
 $items = array("Mcdonalds", "People", "Avengers", "Football");
 
 $sc = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
